@@ -1,0 +1,6 @@
+               {% for item in accordeon_list %}
+                <span class="accTrigger question"><a href="#">{{ item.title|safe }}</a></span>
+                <div class="accContainer">
+                    <div class="accContent">{{ item.content|safe }}</div>
+                </div>
+                {% endfor %}

@@ -1,0 +1,27 @@
+ <div class="gallerySelector">
+            <ul class="gallerySelectorList">
+                <li class="current"><a data-filter="article.portfolio" href="#">Всё</a></li>
+                {% for gallery in all_galleries %}
+                <li><a data-filter="article.portfolio[data-category~='{{gallery.slug }}']" href="#">Фото</a></li>
+               
+             
+            </ul>
+        </div>
+            
+        <section class="portfolio_container">
+            {% for photo in all_photos %}
+			<article class="portfolio" data-category="branding">
+                <section class="thumbImage">
+                    <img src="images/gallery/gallery-01-thumb.jpg" alt="" class="fullwidth">
+                    <div class="thumbTextWrap">
+                        <div class="thumbText">
+                            <h3 class="sectionTitle">Gallery Item</h3>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+                            <a class="thumbLink" href="images/gallery/gallery-01.jpg" rel="prettyPhoto[gallery1]" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum."></a>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            {% endfor %}
+
+            </section>

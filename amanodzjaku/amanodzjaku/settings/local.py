@@ -11,7 +11,7 @@ from base import *
 MEDIA_ROOT = '/home/ak/dev/amanodzjaku/media/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-
+MEDIA_URL = '/media/'
 ########## END MEDIA CONFIGURATION
 
 
@@ -93,7 +93,9 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TEMPLATE_CONTEXT': True,
 }
 ########## END TOOLBAR CONFIGURATION
-
+FIXTURE_DIRS = (
+   '/home/ak/dev/amanodzjaku/amanodzjaku/content/fixtures',
+)
 ########## SECRET CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key should only be used for development and testing.

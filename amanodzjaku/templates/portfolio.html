@@ -1,0 +1,29 @@
+ <div class="gallerySelector">
+            <ul class="gallerySelectorList">
+                <li class="current"><a data-filter="article.portfolio" href="#">Всё</a></li>
+                {% for category in category_list %}
+                {% if category.title != "slider" and category.title != "parallax" and category.title != "links" %}
+
+                <li><a data-filter="article.portfolio[data-category~='{{category.slug }}']" href="#">{{category.title }}</a></li>
+               {% endif %}
+               {% endfor %}
+            </ul>
+        </div>
+            
+        <section class="portfolio_container">
+            {% for photo in all_photos %}
+			<article class="portfolio" data-category="{{photo.category.slug}}">
+                <section class="thumbImage">
+                    <img src="{{photo.get_thumb_url}}" alt="" class="fullwidth">
+                    <div class="thumbTextWrap">
+                        <div class="thumbText">
+                            <h3 class="sectionTitle">{{photo.title}}</h3>
+                            <p>{{photo.caption}}</p>
+                            <a class="thumbLink" href="images/gallery/gallery-01.jpg" rel="prettyPhoto[gallery1]" title="{{ photo.title }}"></a>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            {% endfor %}
+
+            </section>

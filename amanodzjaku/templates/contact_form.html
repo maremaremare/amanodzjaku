@@ -1,0 +1,28 @@
+            <div id="contact_form">
+                <div class="two-thirds column marginTop formWrap marginLeft">
+
+                    <form id="contact" class="contactForm" action="" method="post">{% csrf_token %}
+                        <div class="formSecWrap">
+                            
+                            {% for field in form %}
+    {% if field.label != "Сообщение" %}
+    {{ field.label_tag }}: {{ field }}
+    {% endif %}
+{% endfor %}
+                           
+                        </div>
+                        <div class="formSecWrap formSecWrap2">
+
+                                                       {% for field in form %}
+    {% if field.label = "Сообщение" %}
+    {{ field.label_tag }}: {{ field }}
+    {% endif %}
+{% endfor %}
+                        
+                                <input class="button" id="submit-form" type="submit" name="submit" value="Отправить" />
+                        </div>
+                        <div id="success"></div>
+                    </form>
+                </div>
+            </div>
+   	   </div>
